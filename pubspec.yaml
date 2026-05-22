@@ -1,6 +1,6 @@
 name: almanac_sv
 description: "A comprehensive Dart and Flutter package for the Swedish almanac: public holidays (röda dagar), flag days, name days (namnsdagar), bank-free days, and ISO week numbers."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Cindanela/almanac_sv
 repository: https://github.com/Cindanela/almanac_sv
 
