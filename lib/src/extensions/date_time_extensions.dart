@@ -5,18 +5,15 @@ extension SwedishDateTimeExtensions on DateTime {
   /// In Sweden, ISO-8601 week numbers are the standard. 
   /// Week 1 is defined as the week with the year's first Thursday in it.
   int get weekNumber {
-    // Strip time to avoid Daylight Saving Time issues
-    final date = DateTime(year, month, day);
-    
-    // Find the Thursday of this week
-    final thursday = date.add(Duration(days: DateTime.thursday - date.weekday));
-    
+    // UTC, so the day count has no DST switch in it: a local-time difference
+    // across the March switch is 23 h short and `inDays` drops a day.
+    final thursday = DateTime.utc(year, month, day + DateTime.thursday - weekday);
+
     // The year of this Thursday is the "week year" (which can be different from the date's year around New Year's)
-    final firstDayOfYear = DateTime(thursday.year, 1, 1);
-    
-    // Calculate the difference in days
+    final firstDayOfYear = DateTime.utc(thursday.year, 1, 1);
+
     final daysToThursday = thursday.difference(firstDayOfYear).inDays;
-    
+
     // Week number is 1 + the number of full weeks
     return 1 + (daysToThursday ~/ 7);
   }

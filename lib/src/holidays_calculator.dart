@@ -27,8 +27,10 @@ class HolidaysCalculator {
   static List<SwedishHoliday> getHolidays(int year) {
     final easterSunday = getEasterSunday(year);
     
-    // Helper for adding days
-    DateTime addDays(DateTime date, int days) => date.add(Duration(days: days));
+    // Calendar arithmetic, not `add(Duration)`: a local-time day across a DST
+    // switch is 23 or 25 hours, which lands on 23:00 the day before.
+    DateTime addDays(DateTime date, int days) =>
+        DateTime(date.year, date.month, date.day + days);
     
     // Midsommarafton: Friday between June 19 and June 25
     final DateTime june19 = DateTime(year, 6, 19);

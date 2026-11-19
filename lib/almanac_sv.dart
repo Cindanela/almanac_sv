@@ -64,7 +64,7 @@ class AlmanacSv {
   static bool isDayBeforeRedDay(DateTime date) {
     if (date.weekday == DateTime.saturday) return true;
     
-    final tomorrow = date.add(const Duration(days: 1));
+    final tomorrow = DateTime(date.year, date.month, date.day + 1);
     return isRedDay(tomorrow);
   }
 
