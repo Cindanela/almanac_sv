@@ -1,3 +1,10 @@
+## 0.0.3
+
+* Fixed dates computed across a DST switch in time zones such as Europe/Stockholm:
+  * holiday offsets (e.g. Alla helgons dag 2027 came out as Friday 5 November 23:00);
+  * `weekNumber`, one week low after the March switch in years starting on a Thursday (2026);
+  * `isDayBeforeRedDay` on the day of the October switch.
+
 ## 0.0.2
 
 * Updated dependencies and environment constraints for compatibility with Flutter 3.44.0.
