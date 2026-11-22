@@ -1,3 +1,8 @@
+## 0.0.4
+
+* Pure Dart: dropped the unused Flutter SDK dependency, so Dart-only
+  packages can depend on it. Tests use `package:test`, lints `package:lints`.
+
 ## 0.0.3
 
 * Fixed dates computed across a DST switch in time zones such as Europe/Stockholm:

@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:almanac_sv/almanac_sv.dart';
 import 'package:almanac_sv/src/holidays_calculator.dart';
 

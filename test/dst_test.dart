@@ -1,5 +1,5 @@
 import 'package:almanac_sv/almanac_sv.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 // These only fail on a machine whose time zone has DST, such as
 // Europe/Stockholm: in UTC every local day is 24 hours.
